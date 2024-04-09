@@ -10,3 +10,8 @@
 ###< symfony/framework-bundle ###
 .idea
 /.php-version
+
+###> php-cs-fixer/shim ###
+/.php-cs-fixer.php
+/.php-cs-fixer.cache
+###< php-cs-fixer/shim ###
