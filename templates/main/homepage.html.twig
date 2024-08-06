@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+
+    Me Site {{ parent() }}
+{% endblock %}
+{% block body %}
+    <div class="container-fluid text-center">
+        <h2>
+            Vamos creando partes
+        </h2>
+        <h4>
+            Cantidad de Naves Espaciales: {{ cantidadDeNavesEspaciales * 3 }}
+
+            {% if cantidadDeNavesEspaciales > 200 %}
+                <p>Estamos preparados</p>
+            {% endif %}
+            {% if cantidadDeNavesEspaciales < 600 %}
+                <p>Pero no tanto</p>
+            {% endif %}
+
+            <table class="table table-responsive">
+                <tr>
+                    <th>Nave</th>
+                    <td>{{ miNave.name }}</td>
+                </tr>
+                <tr>
+                    <th>Clase</th>
+                    <td>{{ miNave.class }}</td>
+                </tr>
+                <tr>
+                    <th>Capitán</th>
+                    <td>{{ miNave.captain  | title }}</td>
+                </tr>
+                <tr>
+                    <th>Estado</th>
+                    <td>{{ miNave.status | title}}</td>
+                </tr>
+
+            </table>
+        </h4>
+    </div>
+{% endblock %}

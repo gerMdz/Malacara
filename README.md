@@ -16,4 +16,4 @@ And as always, thanks so much for your support and letting us do what we love!
 <3 Your friends at SymfonyCasts
 
 
-    [cap 5](https://symfonycasts.com/es/screencast/symfony/twig#play)
+    [cap 7](https://symfonycasts.com/es/screencast/symfony/profiler#play)
