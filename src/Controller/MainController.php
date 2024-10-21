@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\NavesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -9,19 +10,17 @@ use Symfony\Component\Routing\Attribute\Route;
 class MainController extends AbstractController
 {
     #[Route('/')]
-    public function homepage(): Response
+    public function homepage(NavesRepository $navesRepository): Response
     {
-        $cantidadDeNavesEspaciales = 218;
+        $naves = $navesRepository->getAll();
+        $cantidadDeNavesEspaciales = count($naves);
 
-        $miNave = [
-            'name' => 'USS LeafyCruiser (NCC-0001)',
-            'class' => 'Garden',
-            'captain' => 'Jean-Luc Pickles',
-            'status' => 'under construction',
-        ];
+        $miNave = $naves[array_rand($naves)];
 
         return $this->render('main/homepage.html.twig',
-            compact('cantidadDeNavesEspaciales', 'miNave'),
+            compact('naves', 'miNave'),
         );
     }
+
+
 }

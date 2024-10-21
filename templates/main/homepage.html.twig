@@ -9,13 +9,13 @@
             Vamos creando partes
         </h2>
         <h4>
-            Cantidad de Naves Espaciales: {{ cantidadDeNavesEspaciales * 3 }}
+            Cantidad de Naves Espaciales: {{ naves|length * 4 }}
 
-            {% if cantidadDeNavesEspaciales > 200 %}
+            {% if naves|length > 2 %}
                 <p>Estamos preparados</p>
             {% endif %}
-            {% if cantidadDeNavesEspaciales < 600 %}
-                <p>Pero no tanto</p>
+            {% if naves|length < 6 %}
+                <p>No estamos preparados</p>
             {% endif %}
 
             <table class="table table-responsive">
